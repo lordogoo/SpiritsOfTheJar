@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+ext {
+    javaMainClass = "com.gmail.lordogoo.spirits_of_the_jar.start"
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation fileTree(dir: 'libs', includes: ['*.jar'])
+    implementation group: 'org.kynosarges', name: 'tektosyne', version: '6.2.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
